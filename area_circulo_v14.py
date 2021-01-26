@@ -3,6 +3,11 @@ from math import pi
 import sys
 import errno
 
+class TerminalColor:
+    ERRO = '\033[91m'
+    NORMAL = '\033[0m'
+
+
 
 def circulo(raio):
     return pi * float(raio) ** 2
@@ -20,7 +25,7 @@ if __name__ == '__main__':
 
     if not sys.argv[1].isnumeric():
         help()
-        print('O raio deve ser um valor númerico')
+        print(TerminalColor.ERRO + 'O raio deve ser um valor númerico' + TerminalColor.NORMAL)
         sys.exit(errno.EINVAL)
 
     Raio = sys.argv[1]
