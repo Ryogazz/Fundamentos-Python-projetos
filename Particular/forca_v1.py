@@ -5,3 +5,5 @@ palavras = ['bola', 'escola', 'livro', 'game', 'lua']
 
 palavra = random.choice(palavras)
 
+palpite = input()
+
