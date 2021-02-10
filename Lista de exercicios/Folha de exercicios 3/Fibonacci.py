@@ -1,12 +1,9 @@
 #! python
 
-x = 0
 y = 0
 z = 1
-while x < 100:
+for _ in range(10):
     print(f'{y}')
     print(f'{z}')
-    soma = y + z
-    y = soma
-    z = soma + z
-    x += 1
+    y = y + z
+    z = y + z
