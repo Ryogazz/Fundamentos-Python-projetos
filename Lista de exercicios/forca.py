@@ -27,6 +27,10 @@ while chances >= 0:
 
         print(acertos[letra], end="")
 
+    if '*' not in acertos:
+        print('\nParabens você venceu')
+        sys.exit(0)
+
 
     if palpite not in palavra:
         chances -= 1
