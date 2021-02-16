@@ -1,21 +1,40 @@
 #! python
 
-chapa1 = 30
-chapa2 = 27
-chapa3 = 42
-chapa4 = 70
-chapa5 = 92
+votos = []
 
-totalDeVotos = chapa1 + chapa2 + chapa3 + chapa4 + chapa5
+for i in range(5):
+    entrada = int(input(f'Digite a quantidade de votos da chapa {i + 1}  '))
+    votos.append(entrada)
+
+totalDeVotos = sum(votos)
 
 def percentual(chapa):
     percentual = (chapa * 100) / totalDeVotos
     return percentual
 
+cont = 0
+for i in votos:
+    if percentual(i) < 50.00:
+        cont += 1
+
+    if cont == 5:
+        print('haverá segundo turno entre :')
+        votos.sort()
+
+        Plugar = votos[4]
+        Slugar = votos[3]
+
+        print(f'A chapa {votos.index(Plugar) + 1} com {votos[4]} votos')
+        print(f'A chapa {votos.index(Slugar) + 1} com {votos[3]} votos')
+
+if cont < 5:
+   votos.sort()
+   vencedor = votos[4]
+   print('**************************************************************************')
+   print(f'O vencendor foi a a chapa {votos.index(vencedor) + 1} com {votos[4]} votos')
 
 
-print(f'A chapa 1 recebeu {percentual(chapa1): .2f} % dos votos com um total de {chapa1} votos')
-print(f'A chapa 2 recebeu {percentual(chapa2): .2f} % dos votos com um total de {chapa2} votos')
-print(f'A chapa 3 recebeu {percentual(chapa3): .2f} % dos votos com um total de {chapa3} votos')
-print(f'A chapa 4 recebeu {percentual(chapa4): .2f} % dos votos com um total de {chapa4} votos')
-print(f'A chapa 5 recebeu {percentual(chapa5): .2f} % dos votos com um total de {chapa5} votos')
+
+print('**************************************************************************')
+for i in range(5):
+    print(f'A chapa {i +1} recebeu {percentual(votos[i]): .2f} % dos votos, com um total de {votos[i]} votos')
