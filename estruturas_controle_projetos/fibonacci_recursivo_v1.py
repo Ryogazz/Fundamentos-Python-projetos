@@ -1,12 +1,10 @@
 #! python
 
-def fibonacci(quantidade):
-    resultado = [0, 1]
+def fibonacci(quantidade, sequencia=(0, 1)):
 
-        resultado.append(sum(resultado[-2:]))
-        if len(resultado) == quantidade:
-            break
-    return resultado
+    if len(sequencia) == quantidade:
+        return sequencia
+    return fibonacci(quantidade, sequencia + (sum(sequencia[-2:]),))
 
 
 if __name__=='__main__':

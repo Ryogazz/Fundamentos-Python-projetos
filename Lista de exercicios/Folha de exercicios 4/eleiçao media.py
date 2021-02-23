@@ -3,9 +3,6 @@
 votos = []
 verificar = True
 
-votosP = votos.copy()
-totalDeVotos = sum(votos)
-
 def percentual(chapa):
     percentual = (chapa * 100) / totalDeVotos
     return percentual
@@ -27,7 +24,6 @@ def resultado_geral(percentual,votos):
        resultadoG = print(f'A chapa {i + 1} recebeu {percentual(votos[i]): .2f} % dos votos, com um total de {votosP[i]} votos')
 
 
-
 for i in range(5):
     while True:
         try:
@@ -38,6 +34,9 @@ for i in range(5):
             print('Erro, digite somente numeros inteiros')
 
     votos.append(entrada)
+
+votosP = votos.copy()
+totalDeVotos = sum(votos)
 
 
 print(resultado(votos,percentual))
