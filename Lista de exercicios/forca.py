@@ -1,10 +1,35 @@
 #! python
 import random
 import sys
+import csv
+from urllib import request
 
-palavras = ['lua', 'casa', 'carro', 'goku', 'escola', 'celular']
+def base_Dados(url):
+    with request.urlopen(url) as texto:
+        print('Carregando a base dados')
+        texto = texto.read().decode('latin1')
+        print('Dowload completo!')
+        palavras = list(map(str, texto.split()))
+
+        while True:
+            palavra = random.choice(palavras)
+            try:
+                pal_int = int(palavra)
+                continue
+            except:
+                break
+
+    return palavra
+
+
+palavra = base_Dados(r'https://pt.wikipedia.org/wiki/My_Little_Pony:_A_Amizade_%C3%89_M%C3%A1gica')
+palavra = palavra.lower()
+#palavras = ['lua', 'casa', 'carro', 'goku', 'escola', 'celular']
+#palavra = random.choice(palavras)
+print(palavra)
+
+
 acertos = []
-palavra = random.choice(palavras)
 
 chances = 5
 numeroLetra = len(palavra)
