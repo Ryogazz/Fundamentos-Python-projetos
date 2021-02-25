@@ -2,6 +2,7 @@
 import random
 import sys
 import csv
+import re
 from urllib import request
 
 def base_Dados(url):
@@ -9,23 +10,17 @@ def base_Dados(url):
         print('Carregando a base dados')
         texto = texto.read().decode('latin1')
         print('Dowload completo!')
-        palavras = list(map(str, texto.split()))
+        #palavras = list(map(str, texto.split()))
+        palavras = re.compile(r'(?<![.-])\b([a-z]{2,}|[A-Z]{1}[a-z]+|[A-Z]{2,})\b(?!\.|@|\-)').findall(texto)
+        palavra = random.choice(palavras)
 
-        while True:
-            palavra = random.choice(palavras)
-            try:
-                pal_int = int(palavra)
-                continue
-            except:
-                break
 
     return palavra
 
 
 palavra = base_Dados(r'https://pt.wikipedia.org/wiki/My_Little_Pony:_A_Amizade_%C3%89_M%C3%A1gica')
 palavra = palavra.lower()
-#palavras = ['lua', 'casa', 'carro', 'goku', 'escola', 'celular']
-#palavra = random.choice(palavras)
+
 print(palavra)
 
 
