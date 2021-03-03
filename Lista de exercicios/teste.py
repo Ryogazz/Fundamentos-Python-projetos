@@ -19,9 +19,9 @@ exibição na grade de programação da Cultura tendo apenas seis temporadas exi
 em 3 de fevereiro de 2015 pelo DStv Kids.'
 
 
-base_de_dados = base_de_dados.lower()
-verificador = set(base_de_dados)
-palavras = base_de_dados.split(' ')
+#base_de_dados = base_de_dados.lower()
+#verificador = set(base_de_dados)
+#palavras = base_de_dados.split(' ')
 
 #print(base_de_dados)
 #print(verificador)
@@ -29,34 +29,29 @@ palavras = base_de_dados.split(' ')
 
 
 def gerador_de_palavras(base_de_dados):
-    print('Entrada:', base_de_dados)
+
 
     base_de_dados = base_de_dados.lower()
+    simbolos = ('"', '(', ')', ',', '.', ':', '[', ']')
+    for simbolo in simbolos:
+        base_de_dados = base_de_dados.replace(simbolo, '')
 
-    print('base_de_dados.lower:', base_de_dados)
 
-    verifcador = set(base_de_dados)
+    verificador = set(base_de_dados)
 
-    print('verificador:', verificador)
+
 
     palavras = base_de_dados.split(' ')
 
-    print('palavras:', palavras)
 
-    for x in random.shuffle(palavras):
-        print('x:', x)
-
-        print('x.isalpha:', x.isalpha())
-        print('x>2:', len(x) > 2)
-        palavra = x.isalpha() == True and len(x) > 2
-
-        print('palavra:', palavra)
-
-    print('palavra final:', palavra)
-    return palavra
+    random.shuffle(palavras)
+    for palavra in palavras:
+        if palavra.isalpha() == True and len(palavra) > 2:
+            return palavra
 
 
-gerador_de_palavras(base_de_dados)
+
+print (gerador_de_palavras(base_de_dados))
 
 
 

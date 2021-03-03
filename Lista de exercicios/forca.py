@@ -33,20 +33,31 @@ exibição na grade de programação da Cultura tendo apenas seis temporadas exi
 [4] e também estreou em 17 de outubro de 2016 no JimJam. A série estreou na Angola e Moçambique\
 em 3 de fevereiro de 2015 pelo DStv Kids.'
 
-def gerador_De_Palavras(base_de_dados):
-    verifcador = set(base_De_Dados)
-    palavras = base_De_Dados.split(' ')
+def gerador_de_palavras(base_de_dados):
 
-    while True:
-        x = random.choice(palavras)
-        if x is not verifcador and x.isalpha() == True and len(x) > 2:
-            palavra = x
-            break
-    return palavra
+
+    base_de_dados = base_de_dados.lower()
+    simbolos = ('"', '(', ')', ',', '.', ':', '[', ']')
+    for simbolo in simbolos:
+        base_de_dados = base_de_dados.replace(simbolo, '')
+
+
+    verificador = set(base_de_dados)
+
+
+
+    palavras = base_de_dados.split(' ')
+
+
+    random.shuffle(palavras)
+    for palavra in palavras:
+        if palavra.isalpha() == True and len(palavra) > 2:
+            return palavra
+
 
 
 #palavra = base_Dados(r'https://pt.wikipedia.org/wiki/My_Little_Pony:_A_Amizade_%C3%89_M%C3%A1gica')
-palavra = gerador_De_Palavras(base_De_Dados).lower()
+palavra = gerador_de_palavras(base_De_Dados)
 
 print(palavra)
 
