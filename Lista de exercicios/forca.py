@@ -41,11 +41,6 @@ def gerador_de_palavras(base_de_dados):
     for simbolo in simbolos:
         base_de_dados = base_de_dados.replace(simbolo, '')
 
-
-    verificador = set(base_de_dados)
-
-
-
     palavras = base_de_dados.split(' ')
 
 
