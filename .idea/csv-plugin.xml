@@ -10,6 +10,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\Funcoes\collable_pacing.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Funcoes\collable_pacing_nomeado.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\Funcoes\gerador_html_v1.py">
           <value>
             <Attribute>
@@ -45,6 +59,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\Funcoes\paking_nomeado.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\Funcoes\primeiro.py">
           <value>
             <Attribute>
@@ -67,6 +88,20 @@
           </value>
         </entry>
         <entry key="\Funcoes\teste.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Funcoes\todos_parametros.py">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Funcoes\unking_nomeado.py">
           <value>
             <Attribute>
               <option name="separator" value="," />
